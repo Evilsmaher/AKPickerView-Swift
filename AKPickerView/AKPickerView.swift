@@ -361,7 +361,7 @@ public class AKPickerView: UIView, UICollectionViewDataSource, UICollectionViewD
 	}
 
 	open override var intrinsicContentSize : CGSize {
-		return CGSize(width: UIViewNoIntrinsicMetric, height: max(self.font.lineHeight, self.highlightedFont.lineHeight))
+		return CGSize(width: UIView.noIntrinsicMetric, height: max(self.font.lineHeight, self.highlightedFont.lineHeight))
 	}
 
 	// MARK: Calculation Functions
@@ -470,7 +470,7 @@ public class AKPickerView: UIView, UICollectionViewDataSource, UICollectionViewD
 		self.collectionView.selectItem(
 			at: IndexPath(item: item, section: 0),
 			animated: animated,
-			scrollPosition: UICollectionViewScrollPosition())
+			scrollPosition: UICollectionView.ScrollPosition)
 		self.scrollToItem(item, animated: animated)
 		self.selectedItem = item
 		if notifySelection {
@@ -566,7 +566,7 @@ public class AKPickerView: UIView, UICollectionViewDataSource, UICollectionViewD
 		let firstSize = self.collectionView(collectionView, layout: collectionView.collectionViewLayout, sizeForItemAt: firstIndexPath)
 		let lastIndexPath = IndexPath(item: number - 1, section: section)
 		let lastSize = self.collectionView(collectionView, layout: collectionView.collectionViewLayout, sizeForItemAt: lastIndexPath)
-		return UIEdgeInsetsMake(
+		return UIEdgeInsets.init(
 			0, (collectionView.bounds.size.width - firstSize.width) / 2,
 			0, (collectionView.bounds.size.width - lastSize.width) / 2
 		)
