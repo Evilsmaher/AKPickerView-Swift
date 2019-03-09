@@ -266,7 +266,7 @@ public class AKPickerView: UIView, UICollectionViewDataSource, UICollectionViewD
 		}
 	}
 	/// Readwrite. A boolean value indicates whether the mask is disabled.
-	@IBInspectable public var maskDisabled: Bool! = nil {
+	var maskDisabled: Bool! = nil {
 		didSet {
 			self.collectionView.layer.mask = self.maskDisabled == true ? nil : {
 				let maskLayer = CAGradientLayer()
@@ -317,7 +317,7 @@ public class AKPickerView: UIView, UICollectionViewDataSource, UICollectionViewD
 		self.collectionView.showsHorizontalScrollIndicator = false
 		self.collectionView.backgroundColor = UIColor.clear
 		self.collectionView.decelerationRate = .fast
-		self.collectionView.autoresizingMask = [UIView.Autoresizing.flexibleWidth, UIView.Autoresizing.flexibleHeight]
+		self.collectionView.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
 		self.collectionView.dataSource = self
 		self.collectionView.register(
 			AKCollectionViewCell.self,
